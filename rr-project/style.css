@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Variables ─────────────────────────────────────────── */
+:root {
+  --bg:          #f0f6f8;
+  --surface:     #ffffff;
+  --surface-alt: #e4f0f4;
+  --primary:     #1a7a8a;
+  --primary-mid: #22939f;
+  --accent:      #2cbbc9;
+  --text:        #1c2f35;
+  --text-muted:  #4e7580;
+  --border:      #c4dde4;
+  --header-from: #0d4f5e;
+  --header-to:   #1a8a9a;
+  --shadow:      0 4px 24px rgba(13, 79, 94, 0.10);
+  --shadow-card: 0 2px 12px rgba(13, 79, 94, 0.08);
+  --radius:      14px;
+  --radius-sm:   8px;
+}
+
+/* ── Reset & Base ───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.header {
+  background: linear-gradient(135deg, var(--header-from) 0%, var(--header-to) 100%);
+  color: #ffffff;
+  padding: 2.4rem 3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 4px 20px rgba(13, 79, 94, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+/* ── Nav ────────────────────────────────────────────────── */
+nav {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.navlink {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  padding: 0.45rem 1rem;
+  border-radius: 100px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.navlink:hover,
+.navlink:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+  outline: none;
+}
+
+.navlink:active {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* ── Page Layout ────────────────────────────────────────── */
+main,
+body > *:not(.header) {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 2rem;
+}
+
+/* ── Info Containers ────────────────────────────────────── */
+.info-container {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+}
+
+/* First container: two equal columns */
+.info-container:first-of-type {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Second container: single full-width card */
+.info-container:last-of-type {
+  grid-template-columns: 1fr;
+}
+
+/* ── Info Boxes (Cards) ─────────────────────────────────── */
+.info-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2.2rem;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.info-box:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+/* ── Headings inside cards ──────────────────────────────── */
+.info-box h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 2px solid var(--surface-alt);
+  line-height: 1.3;
+}
+
+.info-box h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-mid);
+  margin-top: 1.4rem;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+}
+
+/* First h3 in a box has less top margin */
+.info-box h3:first-of-type {
+  margin-top: 0.3rem;
+}
+
+/* ── Paragraphs ─────────────────────────────────────────── */
+.info-box p {
+  font-size: 0.97rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 0.6rem;
+}
+
+.info-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Bold / Stats Emphasis ──────────────────────────────── */
+.info-box b {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ── Stat list items (dash-prefixed paragraphs) ─────────── */
+/* The HTML uses <br> with -  prefix; we style the whole block gently */
+/*
+.info-box p:has(br) {
+  background: var(--surface-alt);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 0.9rem 1.1rem;
+  line-height: 2;
+}
+*/
+
+/* ── References Section ─────────────────────────────────── */
+.references {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 1.4rem 2rem;
+  border-top: 1.5px solid var(--border);
+  /* keep it clearly separate from cards but not as loud */
+}
+
+.references h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.7rem;
+}
+
+.references p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 2;
+}
+
+.references sup {
+  font-size: 0.7rem;
+  color: var(--primary-mid);
+  font-weight: 600;
+}
+
+.references a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease;
+}
+
+.references a:hover {
+  color: var(--accent);
+}
+
+/* ── Homepage Nav Buttons ───────────────────────────────── */
+.page-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.page-link-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2.2rem;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.page-link-card:hover,
+.page-link-card:focus-visible {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  outline: none;
+}
+
+.page-link-card .card-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-mid);
+}
+
+.page-link-card .card-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.25;
+}
+
+.page-link-card .card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-top: 0.2rem;
+}
+
+.page-link-card .card-arrow {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.page-link-card:hover .card-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Prevention Page ────────────────────────────────────── */
+
+/* Numbered tip steps */
+.tips-list {
+  list-style: none;
+  counter-reset: tip-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.tips-list li {
+  counter-increment: tip-counter;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+
+.tips-list li::before {
+  content: counter(tip-counter);
+  flex-shrink: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.1rem;
+}
+
+/* Resource links */
+.resource-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.resource-list li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.55rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.resource-list li a::before {
+  content: '→';
+  color: var(--accent);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.resource-list li a:hover {
+  background: var(--border);
+  border-color: var(--primary-mid);
+  color: var(--primary);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .header {
+    padding: 1.4rem 1.2rem 1.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    position: static;
+  }
+
+  .info-container {
+    padding: 0 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .info-box {
+    padding: 1.4rem 1.3rem;
+  }
+
+  .page-links {
+    padding: 0 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .references {
+    padding: 1.2rem 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .navlink {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.82rem;
+  }
+}
