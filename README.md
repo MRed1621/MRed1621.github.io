@@ -11,3 +11,6 @@ tiles so that every person gets a unique board.
 
 The visual design isn't great, but that's because 1) I suck at it, 2) it's a niche enough of a use that I didn't care past basic visuals, and 3) I didn't spend that much time making it anyway.
 The background image used is a picture of our band director, and was added as a visual gag and inside joke.
+
+### RR Project
+This was a project for my english course
