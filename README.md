@@ -12,5 +12,5 @@ tiles so that every person gets a unique board.
 The visual design isn't great, but that's because 1) I suck at it, 2) it's a niche enough of a use that I didn't care past basic visuals, and 3) I didn't spend that much time making it anyway.
 The background image used is a picture of our band director, and was added as a visual gag and inside joke.
 
-### RR Project
+### English Project
 This was a rhetoric project for my English 1000 course. The purpose was to take an essay I had previously done (which was on hazing) and re-interpret it in a different medium (in this case, a website)
